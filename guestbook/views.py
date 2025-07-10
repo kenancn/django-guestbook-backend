@@ -93,7 +93,8 @@ class GuestbookViewSet(viewsets.ModelViewSet):
                 'users': [
                     {
                         'username': user's name,
-                        'last_entry': 'subject | message'
+                        'last_entry': 'subject | message',
+                        'message_count': total number of messages
                     },
                     ...
                 ]
@@ -123,6 +124,7 @@ class GuestbookViewSet(viewsets.ModelViewSet):
         return Response({
             'users': [{
                 'username': user['name'],
-                'last_entry': user['last_entry']
+                'last_entry': user['last_entry'],
+                'message_count': user['message_count']
             } for user in serializer.data]
         })

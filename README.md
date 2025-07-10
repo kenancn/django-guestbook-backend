@@ -89,7 +89,8 @@ python manage.py runserver
     "users": [
         {
             "username": "user_name",
-            "last_entry": "subject | message"
+            "last_entry": "subject | message",
+            "message_count": 5
         }
     ]
 }

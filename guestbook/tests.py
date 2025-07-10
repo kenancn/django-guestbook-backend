@@ -48,6 +48,7 @@ class GuestbookTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data['users']), 1)
         self.assertEqual(response.data['users'][0]['username'], 'Test User')
+        self.assertEqual(response.data['users'][0]['message_count'], 1)
 
     def test_invalid_entry_creation(self):
         """
